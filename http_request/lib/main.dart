@@ -5,7 +5,7 @@ import 'package:http/http.dart' as http;
 
 
 
-void main(){
+void main() async {
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
@@ -18,4 +18,13 @@ void main(){
       ),
     ),
   ));
+}
+
+
+Future<String> getJson() async {
+  String apiUrl='https://jsonplaceholder.typicode.com/posts';
+
+  http.Response response=await http.get(apiUrl);
+
+  return JSON.decode(response.body);
 }
