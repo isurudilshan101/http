@@ -10,6 +10,7 @@ void main() async {
   String _data=await getJson();
 
   print(_data);
+
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
@@ -30,5 +31,5 @@ Future<String> getJson() async {
 
   http.Response response=await http.get(apiUrl);
 
-  return JSON.decode(response.body);
+  return jsonDecode(response.body).toString();
 }
