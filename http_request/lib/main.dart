@@ -11,9 +11,13 @@ void main() async {
 
   print(_data[0]['title']);
 
+  String _body="";
+
   for (int i=0; i<_data.length; i++){
     print(_data[i]['title'] + " body : " + _data[i]['body']);
   }
+
+  _body=_data[0]['body'];
 
   runApp(MaterialApp(
     home: Scaffold(
@@ -23,7 +27,7 @@ void main() async {
         backgroundColor: Colors.orangeAccent,
       ),
       body: Center(
-        child: Text('Parsing...'),
+        child: Text('Body...$_body'),
       ),
     ),
   ));
