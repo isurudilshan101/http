@@ -6,6 +6,10 @@ import 'package:http/http.dart' as http;
 
 
 void main() async {
+
+  String _data=await getJson();
+
+  print(_data);
   runApp(MaterialApp(
     home: Scaffold(
       appBar: AppBar(
