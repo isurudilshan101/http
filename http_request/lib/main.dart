@@ -12,7 +12,7 @@ void main() async {
   print(_data[0]['title']);
 
   for (int i=0; i<_data.length; i++){
-    print(_data[i]['title']);
+    print(_data[i]['title'] + " body : " + _data[i]['body']);
   }
 
   runApp(MaterialApp(
