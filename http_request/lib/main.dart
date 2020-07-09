@@ -7,9 +7,9 @@ import 'package:http/http.dart' as http;
 
 void main() async {
 
-  String _data=await getJson();
+  List _data=await getJson();
 
-  print(_data);
+  print(_data[0]);
 
   runApp(MaterialApp(
     home: Scaffold(
@@ -26,10 +26,10 @@ void main() async {
 }
 
 
-Future<String> getJson() async {
+Future<List> getJson() async {
   String apiUrl='https://jsonplaceholder.typicode.com/posts';
 
   http.Response response=await http.get(apiUrl);
 
-  return jsonDecode(response.body).toString();
+  return jsonDecode(response.body);
 }
