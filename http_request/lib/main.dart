@@ -9,7 +9,11 @@ void main() async {
 
   List _data=await getJson();
 
-  print(_data[0]);
+  print(_data[0]['title']);
+
+  for (int i=0; i<_data.length; i++){
+    print(_data[i]['title']);
+  }
 
   runApp(MaterialApp(
     home: Scaffold(
