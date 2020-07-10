@@ -32,12 +32,13 @@ void main() async {
           padding: const EdgeInsets.all(16.0),
           itemBuilder: (BuildContext context, int position){
             if(position.isOdd) return Divider();
+            final index=position ~/ 2;
               return ListTile(
-                title:Text("${_data[position]['title']}",
+                title:Text("${_data[index]['title']}",
                 style:TextStyle(fontSize: 14.9),
                 ),
 
-                subtitle: Text("${_data[position]['body']}",
+                subtitle: Text("${_data[index]['body']}",
                 style: TextStyle(fontSize: 13.4,
                 color: Colors.grey,
                 fontStyle: FontStyle.italic),
@@ -45,13 +46,19 @@ void main() async {
 
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
-                  child: Text("${_data[position]['title'][0].toString().toUpperCase()}",
+                  child: Text("${_data[index]['title'][0].toString().toUpperCase()}",
                   style:TextStyle(fontSize: 19.4,
                   color: Colors.orange[100]),
                 ),
+
                 ),
 
+              onTap: () => debugPrint("${_data[index]['id']}"),
+
+                
+
               );
+
           }),
       ),
     ),
