@@ -46,14 +46,14 @@ void main() async {
 
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
-                  child: Text("${_data[index]['title'][0].toString().toUpperCase()}",
+                  child: Text("_showOnTapMessage[0].toString().toUpperCase()}",
                   style:TextStyle(fontSize: 19.4,
                   color: Colors.orange[100]),
                 ),
 
                 ),
 
-              onTap: () => debugPrint("${_data[index]['id']}"),
+              onTap: () {_showOnTapMessage(context,"${_data[index]['title']}");}
 
                 
 
@@ -65,6 +65,18 @@ void main() async {
   ));
 }
 
+void _showOnTapMessage(BuildContext context, String message){
+  var alert=AlertDialog(
+    title: Text('App'),
+    content: Text(message),
+    actions: <Widget>[
+      FlatButton(onPressed: (){Navigator.pop(context);}, child: Text('OK')),
+    ],
+  );
+
+  showDialog(context: context,child:alert);
+}
+
 
 Future<List> getJson() async {
   String apiUrl='https://jsonplaceholder.typicode.com/posts';
@@ -73,3 +85,4 @@ Future<List> getJson() async {
 
   return json.decode(response.body);
 }
+
