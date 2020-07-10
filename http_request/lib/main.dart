@@ -9,13 +9,13 @@ void main() async {
 
   List _data=await getJson();
 
-  print(_data[0]['title']);
+ // print(_data[0]['title']);
 
   //String _body="";
 
-  for (int i=0; i<_data.length; i++){
-    print(_data[i]['title'] + " body : " + _data[i]['body']);
-  }
+  // for (int i=0; i<_data.length; i++){
+  //   print(_data[i]['title'] + " body : " + _data[i]['body']);
+  // }
 
   //_body=_data[0]['body'];
 
@@ -31,8 +31,9 @@ void main() async {
           itemCount:_data.length,
           padding: const EdgeInsets.all(16.0),
           itemBuilder: (BuildContext context, int position){
+            if(position.isOdd) return Divider();
               return ListTile(
-                title:Text("${_data[position]['title']}",
+                title:Text("${_data[position]['id']}",
                 style:TextStyle(fontSize: 18.9),
                 ),
 
