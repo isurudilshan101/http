@@ -46,14 +46,15 @@ void main() async {
 
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
-                  child: Text("_showOnTapMessage[0].toString().toUpperCase()}",
+                  child: Text("${_data[index]['title'][0].toString().toUpperCase()}",
                   style:TextStyle(fontSize: 19.4,
                   color: Colors.orange[100]),
                 ),
 
                 ),
 
-              onTap: () {_showOnTapMessage(context,"${_data[index]['title']}");}
+              
+  onTap: () {_showOnTapMessage(context,"${_data[index]['title']}");}
 
                 
 
@@ -64,6 +65,8 @@ void main() async {
     ),
   ));
 }
+
+
 
 void _showOnTapMessage(BuildContext context, String message){
   var alert=AlertDialog(
