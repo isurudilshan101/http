@@ -36,10 +36,17 @@ void main() async {
                 title:Text("${_data[position]['title']}",
                 style:TextStyle(fontSize: 14.9),
                 ),
+
+                subtitle: Text("${_data[position]['body']}",
+                style: TextStyle(fontSize: 13.4,
+                color: Colors.grey,
+                fontStyle: FontStyle.italic),
+                ),
+
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
-                  child: Text("${_data[position]['title'][0]}",
-                  style:TextStyle(fontSize: 13.4,
+                  child: Text("${_data[position]['title'][0].toString().toUpperCase()}",
+                  style:TextStyle(fontSize: 19.4,
                   color: Colors.orange[100]),
                 ),
                 ),
