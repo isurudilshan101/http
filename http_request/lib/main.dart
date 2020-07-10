@@ -11,13 +11,13 @@ void main() async {
 
   print(_data[0]['title']);
 
-  String _body="";
+  //String _body="";
 
   for (int i=0; i<_data.length; i++){
     print(_data[i]['title'] + " body : " + _data[i]['body']);
   }
 
-  _body=_data[0]['body'];
+  //_body=_data[0]['body'];
 
   runApp(MaterialApp(
     home: Scaffold(
@@ -27,7 +27,17 @@ void main() async {
         backgroundColor: Colors.orangeAccent,
       ),
       body: Center(
-        child: Text('Body...$_body'),
+        child: ListView.builder(
+          itemCount:_data.length,
+          padding: const EdgeInsets.all(16.0),
+          itemBuilder: (BuildContext context, int position){
+              return ListTile(
+                title:Text("${_data[position]['title']}",
+                style:TextStyle(fontSize: 18.9),
+                ),
+
+              );
+          }),
       ),
     ),
   ));
@@ -39,5 +49,5 @@ Future<List> getJson() async {
 
   http.Response response=await http.get(apiUrl);
 
-  return jsonDecode(response.body);
+  return json.decode(response.body);
 }
