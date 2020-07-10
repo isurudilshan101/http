@@ -38,6 +38,10 @@ void main() async {
                 ),
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
+                  child: Text("${_data[position]['body']}",
+                  style:TextStyle(fontSize: 13.4,
+                  color: Colors.orangeAccent),
+                ),
                 ),
 
               );
