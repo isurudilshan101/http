@@ -38,9 +38,9 @@ void main() async {
                 ),
                 leading:CircleAvatar(
                   backgroundColor: Colors.green,
-                  child: Text("${_data[position]['body']}",
+                  child: Text("${_data[position]['title'][0]}",
                   style:TextStyle(fontSize: 13.4,
-                  color: Colors.orangeAccent),
+                  color: Colors.orange[100]),
                 ),
                 ),
 
