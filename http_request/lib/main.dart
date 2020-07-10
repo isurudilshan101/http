@@ -33,8 +33,11 @@ void main() async {
           itemBuilder: (BuildContext context, int position){
             if(position.isOdd) return Divider();
               return ListTile(
-                title:Text("${_data[position]['id']}",
-                style:TextStyle(fontSize: 18.9),
+                title:Text("${_data[position]['title']}",
+                style:TextStyle(fontSize: 14.9),
+                ),
+                leading:CircleAvatar(
+                  backgroundColor: Colors.green,
                 ),
 
               );
