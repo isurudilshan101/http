@@ -73,7 +73,8 @@ void _showOnTapMessage(BuildContext context, String message){
     title: Text('App'),
     content: Text(message),
     actions: <Widget>[
-      FlatButton(onPressed: (){Navigator.pop(context);}, child: Text('OK')),
+      FlatButton(onPressed: (){Navigator.pop(context);},
+       child: Text('OK')),
     ],
   );
 
